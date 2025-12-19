@@ -1,4 +1,3 @@
-import { Request, Response } from "express";
 import Tasks from "../models/taskModel";
 
 const taskController = {
@@ -146,5 +145,6 @@ const taskController = {
         }
     }
 }
+
 
 export default taskController;
