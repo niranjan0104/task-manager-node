@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "1ec31c1d-add1-4fc9-9c55-231215afbeca",
+		"name": "TASK_MANAGEMENT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30286270"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"Niranjan\",\r\n    \"email\": \"nks11789@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/register",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"nsharma@gmail.com\",\r\n    \"password\": \"Mahadev\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/login",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzY2MTI0OTc2LCJleHAiOjE3NjYxNDI5NzZ9.-59mrOUWTzVl10UlVa52ajf_5hnNG922Dio_J0xqYMw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"This is title\",\r\n    \"description\": \"this is description\",\r\n    \"priority\": \"Low\",\r\n    \"dueDate\": \"2025-12-20T03:50:00+05:30\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/tasks",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzY2MTI0OTc2LCJleHAiOjE3NjYxNDI5NzZ9.-59mrOUWTzVl10UlVa52ajf_5hnNG922Dio_J0xqYMw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/tasks?page=1&filter[status]=Pending&filter[priority]=High&filter[dueDate]=2025-12-16",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "filter[status]",
+							"value": "Pending"
+						},
+						{
+							"key": "filter[priority]",
+							"value": "High"
+						},
+						{
+							"key": "filter[dueDate]",
+							"value": "2025-12-16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzY2MTI0OTc2LCJleHAiOjE3NjYxNDI5NzZ9.-59mrOUWTzVl10UlVa52ajf_5hnNG922Dio_J0xqYMw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"Completed\",\r\n    \"priority\": \"High\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/tasks/6944edc0405ffcd36ced3dce",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"tasks",
+						"6944edc0405ffcd36ced3dce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzY2MTI0OTc2LCJleHAiOjE3NjYxNDI5NzZ9.-59mrOUWTzVl10UlVa52ajf_5hnNG922Dio_J0xqYMw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/tasks/6944edc0405ffcd36ced3dce",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"tasks",
+						"6944edc0405ffcd36ced3dce"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
